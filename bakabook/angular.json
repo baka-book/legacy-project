@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "bakabook"
+    }
+  },
+  "defaultProject": "bakabook",
+  "cli": {
+    "analytics": "41c67aa1-b9b0-488c-a6b0-9bca20496df5"
+  }
 }

@@ -14,6 +14,10 @@ app.use(helmet());
 
 const PORT = process.env.PORT || 8080;
 
+app.get("./routes/api/users", (req, res) => {
+  console.log("hello from 8080");
+});
+
 const addUser = require("./routes/api/users");
 const authenticateUser = require("./routes/api/auth");
 const blogpost = require("./routes/api/blog");
