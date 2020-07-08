@@ -1,12 +1,24 @@
 .card{
-   
+   border: 2px solid black;
     width: 450px;
     height: 100%;
-    margin-top: 80px;
+    margin-top: 122px;
     margin-left: 8px;
 }
 .container{
     
-    margin-right: 766px;
+    margin-right: 350px;
     width:450px ;
+    
+}
+
+#navbar-main{
+    background-color: black;
+}
+
+#bakabaka{
+    margin-left: -400px;
+}
+#bakaprofile{
+    margin-left: 450px
 }

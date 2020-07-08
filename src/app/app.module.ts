@@ -21,7 +21,7 @@ import { BookdetailsComponent } from "./bookdetails/bookdetails.component";
   declarations: [
     AppComponent,
     SignupComponent,
-   
+    NavbarComponent,
     ProfileComponent,
     
     FooterComponent,
