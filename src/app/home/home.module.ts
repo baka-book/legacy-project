@@ -1,24 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RouterModule } from '@angular/router';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { RouterModule } from "@angular/router";
 
-import { HomeComponent } from './home.component';
-
-
+import { HomeComponent } from "./home.component";
+import { NavbarComponent } from "../shared/navbar/navbar.component";
+// import {NavbarComponent} from '../shared/navbar/navbar.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        BrowserModule,
-        FormsModule,
-        RouterModule,
-        
-    ],
-    declarations: [ HomeComponent ],
-    exports:[ HomeComponent ],
-    providers: []
+  imports: [CommonModule, BrowserModule, FormsModule],
+  declarations: [HomeComponent],
+  exports: [HomeComponent],
+  providers: [],
 })
-export class HomeModule { }
+export class HomeModule {}
