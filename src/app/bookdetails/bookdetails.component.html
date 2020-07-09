@@ -136,7 +136,13 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
         veniam ullam soluta, voluptatum fugiat aliquid qui dolorem veritatis
         quaerat, quis facere nobis! Maiores magnam dolore perferendis totam sed
-        nisi ipsum?
+        nisi ipsum? Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Ducimus, at dolore cum itaque vel, officiis hic, esse odit natus
+        voluptate inventore deleniti assumenda qui quas necessitatibus tempore
+        voluptatum facere et. Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Ipsa repellendus non consequuntur repudiandae eum,
+        modi quis nulla aspernatur animi officia nisi, aliquid officiis sint
+        reiciendis magni deserunt, hic nam ducimus!
       </p>
     </div>
   </div>
@@ -148,14 +154,18 @@
       <div class="controls">
         <form role="form" autocomplete="off">
           <div class="entry input-group col-xs-3">
-            <input
+            <input id ="commentarea"
               class="form-control"
               name="fields[]"
               type="text"
               placeholder="Type something"
             />
             <span class="input-group-btn">
-              <button class="btn btn-success btn-add" type="button">
+              <button
+                class="btn btn-success btn-add"
+                (click)="generate()"
+                type="button"
+              >
                 ADD comment
               </button>
             </span>
