@@ -16,6 +16,7 @@ import { FooterComponent } from "./shared/footer/footer.component";
 import { HomeModule } from "./home/home.module";
 import { LoginComponent } from "./login/login.component";
 import { BookdetailsComponent } from "./bookdetails/bookdetails.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { BookdetailsComponent } from "./bookdetails/bookdetails.component";
     SignupComponent,
     NavbarComponent,
     ProfileComponent,
-    
+
     FooterComponent,
     LoginComponent,
     BookdetailsComponent,
@@ -35,6 +36,7 @@ import { BookdetailsComponent } from "./bookdetails/bookdetails.component";
     RouterModule,
     AppRoutingModule,
     HomeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

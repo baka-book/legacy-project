@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { SignupService } from "../src/signup.service";
 import { FormBuilder, Validators } from "@angular/forms";
+import { HttpClient } from "@angular/common/http";
+import { Observable, Subscription } from "rxjs";
+import { ajax } from "rxjs/ajax";
 
 @Component({
   selector: "app-signup",
@@ -12,7 +15,7 @@ export class SignupComponent implements OnInit {
   focus;
   focus1;
   focus2;
-  constructor(private data: SignupService) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {}
 
@@ -20,12 +23,20 @@ export class SignupComponent implements OnInit {
   //     // this.data.getData("heyyyyyy from service")
   //     console.log(item.target.value);
   //   }
-  seeVlaue(name,email,password) {
-    var userDetail={
-        name:name.value,
-        email:email.value,
-        password:password.value
-    }
-    console.log(userDetail)
+  seeVlaue(name, email, password, fullName) {
+    var userDetail = {
+      fullName: fullName.value,
+      userName: name.value,
+      email: email.value,
+      password: password.value,
+    };
+    console.log(userDetail);
+
+    return this.http
+      .post("http://localhost:8080/api/users", userDetail)
+      .subscribe((res) => console.log(res));
+
+    // var usersignup = ajax("http://localhost:8080/api/users");
+    // usersignup.subscribe((res) => console.log(res.status, res.response));
   }
 }

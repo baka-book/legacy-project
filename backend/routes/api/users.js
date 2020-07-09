@@ -26,9 +26,9 @@ router.post("/", (req, res) => {
       password,
     });
     //*******************userloaded************* */
-    const newLoader = new UserLoad({
-      fullName,
-    });
+    // const newLoader = new UserLoad({
+    //   fullName,
+    // });
 
     //******************************************* */
     // Create salt and hash
@@ -49,25 +49,27 @@ router.post("/", (req, res) => {
                 user: {
                   id: user.id,
                   fullName: user.fullName,
+                  
                   email: user.email,
+
                 },
               });
             }
           );
         });
       });
-      newLoader.save((error) => {
-        if (error) {
-          console.log(error);
-          res.status(500).json({
-            msg: "server error",
-          });
-        } else {
-          res.json({
-            msg: "data saved succefully",
-          });
-        }
-      });
+      // newLoader.save((error) => {
+      //   if (error) {
+      //     console.log(error);
+      //     res.status(500).json({
+      //       msg: "server error",
+      //     });
+      //   } else {
+      //     res.json({
+      //       msg: "data saved succefully",
+      //     });
+      //   }
+      // });
     });
   });
 });

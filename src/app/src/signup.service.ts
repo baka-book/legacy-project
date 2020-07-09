@@ -6,7 +6,5 @@ import { Injectable } from "@angular/core";
 export class SignupService {
   constructor() {}
 
-  getData(data) {
-    console.warn(data);
-  }
+  
 }
