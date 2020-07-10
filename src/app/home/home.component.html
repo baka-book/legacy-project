@@ -1,0 +1,185 @@
+<nav
+  id="navbar-main"
+  class="navbar navbar-main navbar-expand-lg  navbar-transparent navbar-light headroom headroom--top headroom--pinned "
+>
+  <div class="container">
+    <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
+      <span class="title h3 my-4 text-white"> BakaBook </span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed"
+      aria-controls="navbar_global"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="navbar-collapse collapse"
+      id="navbar_global"
+      [ngbCollapse]="isCollapsed"
+    >
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a [routerLink]="['/home']">
+              <img src="./assets/img/brand/blue.png" />
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button
+              type="button"
+              class="navbar-toggler"
+              (click)="isCollapsed = !isCollapsed"
+              [attr.aria-expanded]="!isCollapsed"
+              aria-controls="navbar_global"
+            >
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">Join</span>
+          </a>
+          <div class="dropdown-menu">
+            <!-- <a [routerLink]="['/user-profile']" class="dropdown-item"
+              >Profile</a
+            > -->
+            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
+            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-icon"
+            href="https://www.facebook.com"
+            target="_blank"
+            data-toggle="tooltip"
+            title="Like us on Facebook"
+          >
+            <i class="fa fa-facebook-square"></i>
+            <span class="nav-link-inner--text d-lg-none">Facebook</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-icon"
+            href="https://www.instagram.com"
+            target="_blank"
+            data-toggle="tooltip"
+            title="Follow us on Instagram"
+          >
+            <i class="fa fa-instagram"></i>
+            <span class="nav-link-inner--text d-lg-none">Instagram</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-icon"
+            href="https://twitter.com"
+            target="_blank"
+            data-toggle="tooltip"
+            title="Follow us on Twitter"
+          >
+            <i class="fa fa-twitter-square"></i>
+            <span class="nav-link-inner--text d-lg-none">Twitter</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-icon"
+            href="https://github.com/baka-book"
+            target="_blank"
+            data-toggle="tooltip"
+            title="Star us on Github"
+          >
+            <i class="fa fa-github"></i>
+            <span class="nav-link-inner--text d-lg-none">Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- <app-navbar></app-navbar> -->
+  <div class="position-relative">
+    <!-- Hero for FREE version -->
+    <section class="section section-lg section-hero section-shaped">
+      <!-- Background circles -->
+      <div class="shape shape-style-1 shape-primary">
+        <span class="span-150"></span>
+        <span class="span-50"></span>
+        <span class="span-50"></span>
+        <span class="span-75"></span>
+        <span class="span-100"></span>
+        <span class="span-75"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+      </div>
+
+      <!-- SVG separator -->
+      <div class="container shape-container d-flex align-items-center py-lg">
+        <div class="col px-0">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 text-center">
+              <!-- <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTdcBC467UMtUuIQQP6xzZz9rov9cx4Yea5sA&usqp=CAU"
+                style="width: 500px;"
+                class="img-fluid"
+              /> -->
+
+              <div class="btn-wrapper mt-5">
+                <a class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0">
+                  <span class="btn-inner--icon"></span>
+                  <span class="btn-inner--text"
+                    ><a [routerLink]="['/login']">Login</a></span
+                  >
+                </a>
+
+                <!-- <button class="btn purple-gradient" >Purple</button> -->
+                <a class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0">
+                  <span class="btn-inner--icon"></span>
+                  <span class="btn-inner--text"
+                    ><a [routerLink]="['/register']">Signup</a></span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SVG separator -->
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg
+          x="0"
+          y="0"
+          viewBox="0 0 2560 100"
+          preserveAspectRatio="none"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </section>
+    <div class="homeParagraph">
+      <center><p>BakaBook has an extraordinary collection of books and has a unique and special place to search for books online.</p> </center>
+
+       <center><p>Thanks for using our Book Store!</p></center>
+    </div>
+  </div>
+</main>
