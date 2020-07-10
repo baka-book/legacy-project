@@ -23,7 +23,6 @@
     "@angular/platform-browser-dynamic": "9.0.5",
     "@angular/router": "9.0.5",
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
-
     "angular-bluebird": "0.0.1",
     "file-saver": "^2.0.2",
     "cors": "^2.8.5",
