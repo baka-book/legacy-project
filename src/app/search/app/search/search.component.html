@@ -1,10 +1,12 @@
+
+
 <nav
   id="navbar-main"
-  class="navbar navbar-main navbar-expand-lg  headroom headroom--top headroom--pinned "
+  class="navbar navbar-main navbar-expand-lg navbar-transparent  headroom headroom--top headroom--pinned"
 >
   <div class="container">
     <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
-      <span class="title h3 my-4 text-white"> BakaBook </span>
+      <span class="title h3 my-4 text-white" id="bakabaka"> BakaBook </span>
     </a>
     <button
       class="navbar-toggler"
@@ -23,9 +25,7 @@
       <div class="navbar-collapse-header">
         <div class="row">
           <div class="col-6 collapse-brand">
-            <a [routerLink]="['/home']">
-              <img src="./assets/img/brand/blue.png" />
-            </a>
+            <a [routerLink]="['/home']"> </a>
           </div>
           <div class="col-6 collapse-close">
             <button
@@ -42,18 +42,19 @@
         </div>
       </div>
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-       
         <li class="nav-item dropdown">
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">Join</span>
+            <span class="nav-link-inner--text" id="bakaprofile">Profile</span>
           </a>
           <div class="dropdown-menu">
             <!-- <a [routerLink]="['/user-profile']" class="dropdown-item"
               >Profile</a
             > -->
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
+            <a [routerLink]="['/user-profile']" class="dropdown-item"
+              >See Profil</a
+            >
+            <a [routerLink]="['/register']" class="dropdown-item">LogOut</a>
           </div>
         </li>
       </ul>
@@ -110,3 +111,35 @@
     </div>
   </div>
 </nav>
+
+<div id="mainDiv">
+  <input
+    type="search"
+    placeholder="Search Books by name or ISBN"
+    #search
+    id="search"
+  />
+  <button (click)="OnSearch(search.value)" class='btn-success'>Search</button>
+</div>
+
+<div *ngIf="books" id="f">
+  <div class="container">
+    
+    <div
+      class="col-md-2 results-container"
+      *ngFor="let book of books"
+      [routerLink]="[
+        '/search',
+        book.volumeInfo.industryIdentifiers[0].identifier
+      ]"
+      id="resultsBooks"
+    >
+    <p *ngIf="book.volumeInfo.imageLinks">
+      <img src="{{ book.volumeInfo.imageLinks.smallThumbnail }}" />
+    </p>
+    <div id="textBook">
+      {{ book.volumeInfo.title }}
+    </div>
+    </div>
+  </div>
+</div>

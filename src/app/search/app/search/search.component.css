@@ -1,0 +1,57 @@
+#search {
+    width: 50%;
+    height: 50px;
+    
+    
+    padding-left: 5%;
+}
+
+button{
+    height : 60px;
+    width : 80px;
+    font-size: 13px;
+    
+
+}
+
+.btn-success {
+    margin-left: 1%;
+}
+
+.results-container{
+    height : 300px;
+
+}
+
+#mainDiv {
+    margin-top: 10%;
+    text-align: center;
+}
+
+body {
+    background-color: blueviolet;
+}
+
+#navbar-main {
+    background-color: blueviolet;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+
+}
+
+#resultsBooks {
+    float: left;
+    margin-right: 10%;
+    border: darkgrey 1px solid;
+}
+
+#navbar-main {
+   background-color: blueviolet;
+}
+
+#textBook {
+    border: 1px black solid;
+}
