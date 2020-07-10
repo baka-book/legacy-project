@@ -177,9 +177,74 @@
       </div>
     </section>
     <div class="homeParagraph">
+
+      <center><h1 id="damnDude">BakaBook has an extraordinary collection of books and has a unique and special place to search for books online.</h1> </center>
+
+       <center><h2>Thanks for using our Book Store!</h2></center>
+
       <center><p>BakaBook has an extraordinary collection of books and has a unique and special place to search for books online.</p> </center>
 
-       <center><p>Thanks for using our Book Store!</p></center>
+
+
     </div>
   </div>
+  <footer class="footer" [ngClass]="{'has-cards': getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login'}">
+    <div class="container container-lg" *ngIf="getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login'">
+      <div class="row">
+        <div class="col-md-6 mb-5 mb-md-0">
+          <div class="card card-lift--hover shadow border-0">
+            
+              <img src="../../../src/assets/img/theme/img-1-1200x1000.jpg" class="card-img">
+           
+          </div>
+        </div>
+        <div class="col-md-6 mb-5 mb-lg-0">
+          <div class="card card-lift--hover shadow border-0">
+            
+              <img src=".../../../src/assets/img/theme/img-1-1200x1000.jpg" class="card-img">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row row-grid align-items-center" [ngClass]="{'my-md': getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login', 'mb-5':getPath()==='/user-profile' || getPath()==='/register' || getPath()==='/login'}">
+        
+        <div class="col-lg-6 text-lg-center btn-wrapper">
+          <a target="_blank" href="https://twitter.com" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" ngbTooltip="Follow us">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" ngbTooltip="Like us">
+            <i class="fa fa-facebook-square"></i>
+          </a>
+          <a target="_blank" href="https://dribbble.com" class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round" ngbTooltip="Follow us">
+            <i class="fa fa-dribbble"></i>
+          </a>
+          <a target="_blank" href="https://github.com" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" ngbTooltip="Star on Github">
+            <i class="fa fa-github"></i>
+          </a>
+        </div>
+      </div>
+      <hr>
+      <div class="row align-items-center justify-content-md-between">
+        <div class="col-md-6">
+          <div class="copyright">
+            &copy; {{test | date: 'yyyy'}}
+           
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="nav nav-footer justify-content-end">
+            
+            <li class="nav-item">
+              <a>BakaBook</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
 </main>
+
