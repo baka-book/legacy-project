@@ -1,116 +1,58 @@
 
+<body>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color" id="navBaar">
 
-<nav
-  id="navbar-main"
-  class="navbar navbar-main navbar-expand-lg navbar-transparent  headroom headroom--top headroom--pinned"
->
-  <div class="container">
-    <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
-      <span class="title h3 my-4 text-white" id="bakabaka"> BakaBook </span>
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      (click)="isCollapsed = !isCollapsed"
-      [attr.aria-expanded]="!isCollapsed"
-      aria-controls="navbar_global"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div
-      class="navbar-collapse collapse"
-      id="navbar_global"
-      [ngbCollapse]="isCollapsed"
-    >
-      <div class="navbar-collapse-header">
-        <div class="row">
-          <div class="col-6 collapse-brand">
-            <a [routerLink]="['/home']"> </a>
-          </div>
-          <div class="col-6 collapse-close">
-            <button
-              type="button"
-              class="navbar-toggler"
-              (click)="isCollapsed = !isCollapsed"
-              [attr.aria-expanded]="!isCollapsed"
-              aria-controls="navbar_global"
-            >
-              <span></span>
-              <span></span>
-            </button>
-          </div>
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="#">BakaBook</a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">LogOut</a>
+      </li>
+
+      <!-- Dropdown -->
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
         </div>
+      </li> -->
+
+    </ul>
+    <!-- Links -->
+
+    <form class="form-inline">
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       </div>
-      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-        <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-            <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text" id="bakaprofile">Profile</span>
-          </a>
-          <div class="dropdown-menu">
-            <!-- <a [routerLink]="['/user-profile']" class="dropdown-item"
-              >Profile</a
-            > -->
-            <a [routerLink]="['/user-profile']" class="dropdown-item"
-              >See Profil</a
-            >
-            <a [routerLink]="['/register']" class="dropdown-item">LogOut</a>
-          </div>
-        </li>
-      </ul>
-      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-        <li class="nav-item">
-          <a
-            class="nav-link nav-link-icon"
-            href="https://www.facebook.com"
-            target="_blank"
-            data-toggle="tooltip"
-            title="Like us on Facebook"
-          >
-            <i class="fa fa-facebook-square"></i>
-            <span class="nav-link-inner--text d-lg-none">Facebook</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link nav-link-icon"
-            href="https://www.instagram.com"
-            target="_blank"
-            data-toggle="tooltip"
-            title="Follow us on Instagram"
-          >
-            <i class="fa fa-instagram"></i>
-            <span class="nav-link-inner--text d-lg-none">Instagram</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link nav-link-icon"
-            href="https://twitter.com"
-            target="_blank"
-            data-toggle="tooltip"
-            title="Follow us on Twitter"
-          >
-            <i class="fa fa-twitter-square"></i>
-            <span class="nav-link-inner--text d-lg-none">Twitter</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link nav-link-icon"
-            href="https://github.com/baka-book"
-            target="_blank"
-            data-toggle="tooltip"
-            title="Star us on Github"
-          >
-            <i class="fa fa-github"></i>
-            <span class="nav-link-inner--text d-lg-none">Github</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+    </form>
   </div>
+  <!-- Collapsible content -->
+
 </nav>
+<!--/.Navbar-->
 
 <div id="mainDiv">
   <input
@@ -122,11 +64,27 @@
   <button (click)="OnSearch(search.value)" class='btn-success'>Search</button>
 </div>
 
+<div class="emptyDiv"></div>
 <div *ngIf="books" id="f">
   <div class="container">
     
-    <div
-      class="col-md-2 results-container"
+    <div class="card"  *ngFor="let book of books"
+    [routerLink]="[
+      '/search',
+      book.volumeInfo.industryIdentifiers[0].identifier
+    ]">
+    <p *ngIf="book.volumeInfo.imageLinks">
+      <img class="card-img-top" src="{{ book.volumeInfo.imageLinks.smallThumbnail }}" alt="Card image">
+      </p>
+      <div class="card-body">
+        
+        <p class="card-text">{{ book.volumeInfo.title }}</p>
+        
+      </div>
+    </div>
+
+    <!-- <div
+      class="card"
       *ngFor="let book of books"
       [routerLink]="[
         '/search',
@@ -135,11 +93,14 @@
       id="resultsBooks"
     >
     <p *ngIf="book.volumeInfo.imageLinks">
-      <img src="{{ book.volumeInfo.imageLinks.smallThumbnail }}" />
+      <img src="{{ book.volumeInfo.imageLinks.smallThumbnail }}" class="card-img-top" />
     </p>
-    <div id="textBook">
+    <div class="card-text">
       {{ book.volumeInfo.title }}
     </div>
-    </div>
+    </div> -->
   </div>
 </div>
+</body>
+
+

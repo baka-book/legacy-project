@@ -10,7 +10,7 @@ import { SignupComponent } from "./signup/signup.component";
 
 import { ProfileComponent } from "./profile/profile.component";
 import { HomeComponent } from "./home/home.component";
-import { NavbarComponent } from "./shared/navbar/navbar.component";
+import { NavbarComponent } from "./home/navbar.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { HttpModule } from '@angular/http';
 
