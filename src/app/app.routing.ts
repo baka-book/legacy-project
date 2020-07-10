@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -25,6 +25,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       useHash: true,
     }),
+    HttpClientModule,
   ],
   exports: [],
 })
