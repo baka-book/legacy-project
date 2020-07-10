@@ -1,16 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
+import { HttpClient } from "@angular/common/http";
+import { Observable, Subscription } from "rxjs";
+import { ajax } from "rxjs/ajax";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
   focus;
   focus1;
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  seeBook(email, password) {
+    var user = {
+      email: email.value,
+      password: password.value,
+    };
+    console.log(user);
+
+    return this.http
+      .post("http://localhost:8080/api/auth", user)
+      .subscribe((res) => console.log(res));
+
+    // var usersignup = ajax("http://localhost:8080/api/users");
+    // usersignup.subscribe((res) => console.log(res.status, res.response));
   }
-
 }
