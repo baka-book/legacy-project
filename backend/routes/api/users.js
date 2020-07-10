@@ -7,18 +7,23 @@ const jwt = require("jsonwebtoken");
 const User = require("../../models/User");
 const UserLoad = require("../../models/userLoaded");
 // ROUTE POST api/users
+const Profile = require("../../models/profile-schema");
 
 router.post("/", (req, res) => {
   const { fullName, userName, email, password } = req.body;
-
+  
   // simple validation :
   if (!fullName || !userName || !email || !password) {
     return res.status(400).json({ msg: "please enter all fields" });
   }
+  
 
   //check for existing user
   User.findOne({ email }).then((user) => {
     if (user) return res.status(400).json({ msg: "user aleady exists" });
+    const editProf = new Profile({
+      fullName,
+    });
     const newUser = new User({
       fullName,
       userName,
@@ -36,6 +41,7 @@ router.post("/", (req, res) => {
       bcrypt.hash(newUser.password, salt, (err, hash) => {
         if (err) throw err;
         newUser.password = hash;
+        editProf.save().then(user=>{console.log("ok")})
         newUser.save().then((user) => {
           //token parameter
           jwt.sign(
@@ -49,9 +55,8 @@ router.post("/", (req, res) => {
                 user: {
                   id: user.id,
                   fullName: user.fullName,
-                  
-                  email: user.email,
 
+                  email: user.email,
                 },
               });
             }
