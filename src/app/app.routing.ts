@@ -3,11 +3,13 @@ import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
 
+import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from "./home/home.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { SignupComponent } from "./signup/signup.component";
 import { BookdetailsComponent } from "./bookdetails/bookdetails.component";
 import { LoginComponent } from "./login/login.component";
+
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -25,6 +27,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       useHash: true,
     }),
+    HttpClientModule,
   ],
   exports: [],
 })
