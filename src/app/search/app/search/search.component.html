@@ -1,6 +1,6 @@
 
 <body>
-<!--Navbar-->
+<!-- Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark primary-color" id="navBaar">
 
   <!-- Navbar brand -->
@@ -23,11 +23,11 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Profile</a>
+        <a class="nav-link" [routerLink]="['/user-profile']">Profile</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="#">LogOut</a>
-      </li>
+      </li> -->
 
       <!-- Dropdown -->
       <!-- <li class="nav-item dropdown">
@@ -52,7 +52,7 @@
   <!-- Collapsible content -->
 
 </nav>
-<!--/.Navbar-->
+<!--/.Navbar -->
 
 <div id="mainDiv">
   <input
@@ -74,7 +74,7 @@
       book.volumeInfo.industryIdentifiers[0].identifier
     ]">
     <p *ngIf="book.volumeInfo.imageLinks">
-      <img class="card-img-top" src="{{ book.volumeInfo.imageLinks.smallThumbnail }}" alt="Card image">
+      <img #img class="card-img-top" src="{{ book.volumeInfo.imageLinks.smallThumbnail }}" alt="Card image" (click)='OnSearchBook(img.src)' >
       </p>
       <div class="card-body">
         
