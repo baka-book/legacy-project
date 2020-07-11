@@ -23,6 +23,16 @@ export class SignupComponent implements OnInit {
   //     // this.data.getData("heyyyyyy from service")
   //     console.log(item.target.value);
   //   }
+
+/**
+ * @function seeValue
+ * @param name 
+ * @param email 
+ * @param password 
+ * @param fullName 
+ * @returns 
+ */
+
   seeVlaue(name, email, password, fullName) {
     var userDetail = {
       fullName: fullName.value,

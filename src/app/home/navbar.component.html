@@ -3,7 +3,7 @@
   class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned "
 >
   <div class="container">
-    <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
+    <a class="navbar-brand mr-lg-5" [routerLink]="['/search']">
       <span class="title h3 my-4 text-white"> BakaBook </span>
     </a>
     <button
@@ -46,9 +46,9 @@
         <li class="nav-item dropdown">
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">Join</span>
+            <span class="nav-link-inner--text" id="spaan"></span>
           </a>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" id="drop">
             <!-- <a [routerLink]="['/user-profile']" class="dropdown-item"
               >Profile</a
             > -->

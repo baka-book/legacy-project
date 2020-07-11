@@ -13,7 +13,27 @@ export class SearchComponent implements OnInit {
 
   constructor(private googleBookApiService: GoogleBookApiService) { }
 
+/**
+ * @function OnSearch - searches for a specific book 
+ * @param s 
+ * @returns data books
+ */
+
+
   OnSearch(s){
+    this.googleBookApiService.SearchBooks(s)
+        .subscribe((data) => {
+            this.books = data.items;
+        });
+  }
+
+  /**
+   * @function OnSearchBook
+   * @param s 
+   * @returns data of the clicked book
+   */
+  
+  OnSearchBook(s){
     this.googleBookApiService.SearchBooks(s)
         .subscribe((data) => {
             this.books = data.items;
