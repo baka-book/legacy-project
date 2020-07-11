@@ -1,0 +1,37 @@
+<div>
+  <input
+    type="search"
+    placeholder="Search Books by name or ISBN"
+    #search
+    id="search"
+  />
+  <button (click)="OnSearch(search.value)">Search</button>
+</div>
+
+<div *ngIf="books" id="f">
+  <div class="container">
+    <div
+      class="col-md-2 results-container"
+      *ngFor="let book of books"
+      routerLink="
+        '/search'      
+      "
+    >
+      <p #des>{{ book.volumeInfo.title }}</p>
+      <br />
+      {{ book.volumeInfo.authors }}
+      <br />
+      <!-- <p>{{ book.volumeInfo.description }}</p> -->
+      <!-- {{ book.volumeInfo.description }} -->
+      <p *ngIf="book.volumeInfo.imageLinks">
+        <img
+          id="bs"
+          #img
+          src="{{ book.volumeInfo.imageLinks.smallThumbnail }}"
+          (click)="OnSearch1(img.src)"
+        />
+      </p>
+    </div>
+  </div>
+</div>
+<!-- <app-book-display></app-book-display> -->
