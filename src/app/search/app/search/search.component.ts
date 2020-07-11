@@ -19,6 +19,13 @@ export class SearchComponent implements OnInit {
             this.books = data.items;
         });
   }
+  
+  OnSearchBook(s){
+    this.googleBookApiService.SearchBooks(s)
+        .subscribe((data) => {
+            this.books = data.items;
+        });
+  }
 
   ngOnInit() {
      this.googleBookApiService.SearchBooks('javascript')
