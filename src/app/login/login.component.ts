@@ -16,6 +16,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
+/**
+ * @function seeBook - check for the user
+ * @param email 
+ * @param password 
+ * @returns Booleean
+ */
+
   seeBook(email, password) {
     var user = {
       email: email.value,

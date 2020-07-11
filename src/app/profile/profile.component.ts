@@ -22,25 +22,44 @@ import {
 export class ProfileComponent {
   selectedFile: File;
   configUrl = "http://localhost:8080/uploade";
-  image = "./assets/img/theme/team-4-800x800.jpg";
+  image = "./assets/img/theme/no-profile-picture.jpg";
   div1=false;
   data ={
-  fullname : "hmed",
-  age : 0,
-  town : "ghazela",
-  occupation : "zazar"
+  fullname : "ahmed fenni",
+  age : 99,
+  town : "from",
+  occupation : "work"
   }
   constructor(private http: HttpClient) {}
 
- 
+ /**@function onFileChanged
+  * @param event 
+  * @returns
+  */
   onFileChanged(event) {
     this.selectedFile = event.target.files[0];
   }
+  
+/**
+ * @function div1Function
+ * @param {void}
+ * @returns {void}
+ */
   
   div1Function(){
     this.div1= !this.div1
     
 }
+
+/**
+ * @function onSubmit
+ * @param fullname 
+ * @param age 
+ * @param town 
+ * @param occupation 
+ * @returns {void}
+ */
+
  onSubmit(fullname,age,town,occupation){
    this.data.fullname = fullname.value
    this.data.age = age.value
@@ -50,6 +69,12 @@ export class ProfileComponent {
 
  }
   
+/**
+ * @function onUpload
+ * @param {void}
+ * @returns post request for the image upload
+ */
+
   onUpload() {
     console.log(this.image);
     const uploadData = new FormData();
@@ -58,9 +83,9 @@ export class ProfileComponent {
 
     return this.http.post(this.configUrl, uploadData).subscribe((data: any) => {
       console.log(data);
-      let x = "./src/assets/img/theme/" + data.myPath
+      let x = "./assets/img/theme/" + "myFile-1594319779446.jpg"
       console.log(x)
-      setTimeout(()=>{this.image = x },3000);
+      setTimeout(()=>{this.image = x },1500);
       
     });
   }

@@ -33,7 +33,11 @@ export class NavbarComponent implements OnInit {
          this.lastPoppedUrl = ev.url;
      });
     }
-
+/**
+ * @function isHome
+ * @param {void}
+ * @returns Boolean
+ */
     isHome() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
@@ -44,6 +48,13 @@ export class NavbarComponent implements OnInit {
             return false;
         }
     }
+
+    /**
+     * @function isDocumentation
+     * @param {void}
+     * @returns Boolean
+     */
+
     isDocumentation() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
         if( titlee === '#/documentation' ) {
