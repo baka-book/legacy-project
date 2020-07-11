@@ -13,15 +13,15 @@
     <div
       class="col-md-2 results-container"
       *ngFor="let book of books"
-      [routerLink]="[
-        '/search',
-        book.volumeInfo.industryIdentifiers[0].identifier
-      ]"
+      routerLink="
+        '/search'      
+      "
     >
-      <p #title>{{ book.volumeInfo.title }}</p>
+      <p #des>{{ book.volumeInfo.title }}</p>
       <br />
       {{ book.volumeInfo.authors }}
       <br />
+      <!-- <p>{{ book.volumeInfo.description }}</p> -->
       <!-- {{ book.volumeInfo.description }} -->
       <p *ngIf="book.volumeInfo.imageLinks">
         <img
@@ -34,3 +34,4 @@
     </div>
   </div>
 </div>
+<!-- <app-book-display></app-book-display> -->

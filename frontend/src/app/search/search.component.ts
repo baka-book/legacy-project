@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { GoogleBookApiService } from "../services/google-book-api.service";
+import {SharedSearchBookService} from "../services/shared-search-book.service"
+
 
 @Component({
   selector: "app-search",
@@ -9,7 +11,7 @@ import { GoogleBookApiService } from "../services/google-book-api.service";
 export class SearchComponent {
   books;
 
-  constructor(private googleBookApiService: GoogleBookApiService) {}
+  constructor(private googleBookApiService : GoogleBookApiService, private sharedSearchBookService : SharedSearchBookService ) {}
 
   OnSearch(s) {
     this.googleBookApiService.SearchBooks(s).subscribe((data) => {
@@ -22,10 +24,11 @@ export class SearchComponent {
       console.log(this.books);
     });
   }
-  // ngOnInit() {
-  //    this.googleBookApiService.SearchBooks('javascript')
-  //         .subscribe((data)=>{
-  //            //console.log(data.items)
-  //         })
-  // }
+
+  OnSearchBook(s) {
+    this.sharedSearchBookService.sendMessage(s)
+  }
+
+    
+
 }
