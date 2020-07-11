@@ -1,0 +1,20 @@
+.homeParagraph{  
+/* background-image: url('../src/assets/img/theme/homePage.png'); */
+background-image: url('src/assets/img/theme/homePage.PNG');
+    
+    background-color:#FFCC33;  
+    /* color: white; */
+    padding:10px;  
+    
+    margin-top:10px;  
+    
+    margin-bottom:10px;  
+    
+    margin-left:20px;  
+    
+    margin-right:20px;  
+    
+    }
+    .damnDude {
+color: white;
+    }
